@@ -1,0 +1,37 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Footer from './components/Footer';
+import Auth from './components/Auth';
+import About from './components/About';
+import Learning from './components/Learning';
+import Parent from './components/Parent';
+import News from './components/News';
+import Safety from './components/Parent/Safety';
+import Support from './components/Support';
+import PostPage from './components/PostPage'; // Correct import
+
+function App() {
+  return (
+    <Router basename="/school-template/">
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/login" element={<Auth />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/learning" element={<Learning />} />
+          <Route path="/parent" element={<Parent />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/safety" element={<Safety />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/post/:postId" element={<PostPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;
